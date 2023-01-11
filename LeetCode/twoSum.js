@@ -5,10 +5,10 @@
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-function twoSum(nums, target) {
+function twoSum(arr, target) {
     const previousValues = {}
-    for (let i = 0; i < nums.length; i++) {
-        const currentValue = nums[i]
+    for (let i = 0; i < arr.length; i++) {
+        const currentValue = arr[i]
         const neededValue = target - currentValue
         if (previousValues[neededValue] != null) {
             return [previousValues[neededValue], i]
@@ -21,3 +21,4 @@ function twoSum(nums, target) {
 console.log(twoSum([3,8,7,11,15,2], 9))
 console.log(twoSum([2,3,4], 6))
 console.log(twoSum([3,3], 6))
+console.log([2,3], 6)
