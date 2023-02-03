@@ -1,23 +1,23 @@
 function calPoints(operations){
-    let newArr = []
+    let newOperations = []
     let x = 0
     for (let i = 0; i < operations.length; i ++){
         if (operations[i] == "+"){
-            newArr.push(newArr[newArr.length - 1] + newArr[newArr.length - 2])
+            newOperations.push(newOperations[newOperations.length - 1] + newOperations[newOperations.length - 2])
         }
         else if (operations[i] == "D"){
-            newArr.push(newArr[newArr.length - 1] * 2)
+            newOperations.push(newOperations[newOperations.length - 1] * 2)
         }
         else if (operations[i] == "C") {
-            newArr.pop()
+            newOperations.pop()
         }
         else {
-            newArr.push(parseInt(operations[i]))
+            newOperations.push(parseInt(operations[i]))
         }
     }
-    console.log(newArr)
-    for (let j = 0; j < newArr.length; j++){
-        x += newArr[j]
+    console.log(newOperations)
+    for (let j = 0; j < newOperations.length; j++){
+        x += newOperations[j]
     }
     return x
 }
