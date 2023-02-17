@@ -38,7 +38,7 @@ function sortArray(nums){
     for (let i = 1; i < nums.length; i++){
         let j = i - 1
         while(j >= 0 && nums[j+1] < nums[j]){
-            temp = nums[j+1]
+            let temp = nums[j+1]
             nums[j+1] = nums[j]
             nums[j] = temp
             j--
@@ -79,6 +79,20 @@ function quickSort(nums){
 console.log(quickSort([5,2,3,1]))
 
 // Merge sort
+function mergeSort(nums){
+    if (nums.length <= 1){
+        return nums
+    }
+    const mid = Math.floor(nums.length / 2)
+    const leftNums = nums.slice(0, mid)
+    const rightNums = nums.slice(mid)
+    
+    return merge(
+        mergeSort(leftNums),
+        mergeSort(rightNums)
+    )
+}
+
 function merge(leftNums, rightNums){
     const output = []
     let leftIndex = 0
@@ -97,20 +111,6 @@ function merge(leftNums, rightNums){
         }
     }
     return [...output, ...leftNums.slice(leftIndex), ...rightNums.slice(rightIndex)]
-}
-
-function mergeSort(nums){
-    if (nums.length <= 1){
-        return nums
-    }
-    const mid = Math.floor(nums.length / 2)
-    const leftNums = nums.slice(0, mid)
-    const rightNums = nums.slice(mid)
-    
-    return merge(
-        mergeSort(leftNums),
-        mergeSort(rightNums)
-    )
 }
 
 console.log(mergeSort([5,2,3,1]))
