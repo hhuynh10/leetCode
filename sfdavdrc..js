@@ -16,4 +16,4 @@ function search(nums, target){
     return "Target doesnt exist"
 }
 
-console.log(search([-1,0,3,5,9,12], 2)) grgr
+console.log(search([-1,0,3,5,9,12], 2))
