@@ -30,6 +30,7 @@ function searchMatrix1(matrix, target){
     if (!(top <= bot)){
         return false
     }
+    
     let row = Math.trunc((top + bot) / 2)
 
     let [left, right] = [0, cols - 1]
