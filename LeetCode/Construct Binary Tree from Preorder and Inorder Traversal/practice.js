@@ -1,28 +1,27 @@
 class TreeNode {
-    constructor(val) {
-        this.val = val; 
-        this.left = null;
-        this.right = null; 
-    }
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
 }
 
-var buildTree = function(preorder, inorder) {
-    
-    function recurse(pStart, pEnd, inStart, inEnd){
-        if (pStart > pEnd || inStart > inEnd){
-            return null
-        }
+var buildTree = function (preorder, inorder) {
+  if (preorder.length === 0 || inorder.length === 0) {
+    return null;
+  }
 
-        let rootVal = preorder[pStart]
-        let inIndex = inorder.indexOf(rootVal)
-        let nLeft = inIndex - inStart
+  let root = new TreeNode(preorder[0]);
+  let mid = inorder.indexOf(preorder[0]);
 
-        let root = new TreeNode(rootVal)
+  let leftInorder = inorder.slice(0, mid);
+  let rightInorder = inorder.slice(mid + 1);
 
-        root.left = recurse(pStart+1, pStart+nLeft, inStart, inEnd-1)
-        root.right = recurse(pStart+1+nLeft, pEnd, inIndex+1, inEnd)
-        
-        return root
-    }
-    return recurse(0, preorder.length-1, 0, inorder.length-1)
+  let leftPreorder = preorder.slice(1, 1 + leftInorder.length);
+  let rightPreorder = preorder.slice(1 + leftInorder.length);
+
+  root.left = buildTree(leftPreorder, leftInorder);
+  root.right = buildTree(rightPreorder, rightInorder);
+
+  return root;
 };
