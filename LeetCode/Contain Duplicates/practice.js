@@ -9,3 +9,13 @@ function containsDuplicate(nums) {
     return false
 };
 
+function containsDuplicate1(nums) {
+    let numsSet = new Set()
+    for (let num of nums){
+        if (numsSet.has(num)){
+            return true
+        }
+        numsSet.add(num)
+    }
+    return false
+}
