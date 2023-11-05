@@ -8,7 +8,7 @@ function twoSum(nums, target) {
     let secondNumIndex = map.get(secondNum)
 
     if (map.has(secondNum)){
-        return [secondNumIndex, index]
+        return [index, secondNumIndex]
     }
 
     map.set(num, index)
