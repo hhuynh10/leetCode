@@ -1,24 +1,12 @@
-function phoneticLookup(val) {
-    let result = ""
-  
-  
-    // Only change code below this line
-    let lookup = {
-      "alpha": "Adams",
-  
-      "bravo": "Boston",
-      
-     "charlie":"Chicago",
-  
-      "delta": "Denver",
-      
-      "echo": "Easy",
-  
-      "foxtrot":"Frank"
-      }
-      result = lookup[val]
-    // Only change code above this line
-    return result;
-  }
-  
-  console.log(phoneticLookup("alpha"))
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin
+}
+
+console.log(randomRange(2, 9))
+
+
+function convertToInteger(str) {
+  return parseInt(str, 2)
+}
+
+console.log(convertToInteger("10011"));
