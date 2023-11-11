@@ -3,9 +3,19 @@
 // You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the formula mentioned above to help convert the Celsius temperature to Fahrenheit.
 
 function convertCtoF(celsius) {
-    let fahrenheit = celsius * 9/5 + 32;
-    return fahrenheit;
-  }
-  
+  let fahrenheit = (celsius * 9) / 5 + 32;
+  return fahrenheit;
+}
+
 convertCtoF(30);
 
+let obj = {
+  a: 12,
+  b: 14,
+  c: 43,
+};
+let values = Object.values(obj);
+console.log(values);
+let max = Math.max(...values);
+
+console.log(max);

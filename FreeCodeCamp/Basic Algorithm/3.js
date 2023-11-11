@@ -9,12 +9,12 @@
 // Only integers greater than or equal to zero will be supplied to the function.
 
 function factorialize(num) {
-    let total = 1
+  let total = 1;
 
-    for (let i = 1; i <= num; i++){
-        total *= i
-    }
-    return total
+  for (let i = 1; i <= num; i++) {
+    total *= i;
+  }
+  return total;
 }
 
 factorialize(5);
