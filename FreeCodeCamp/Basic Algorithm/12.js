@@ -1,16 +1,20 @@
-// Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+// You are given two arrays and an index.
 
-// For the purpose of this exercise, you should also capitalize connecting words like the and of.
+// Copy each element of the first array into the second array, in order.
 
-function titleCase(str) {
-  let newArr = str.split(" ");
+// Begin inserting elements at index n of the second array.
 
-  for (let i = 0; i < newArr.length; i++) {
-    newArr[i] = newArr[i][0].toUpperCase() + newArr[i].toLowerCase().slice(1);
+// Return the resulting array. The input arrays should remain the same after the function runs.
+
+function frankenSplice(arr1, arr2, n) {
+  let newArr2 = arr2.slice();
+
+  for (let i = 0; i < arr1.length; i++) {
+    newArr2.splice(n, 0, arr1[i]);
+    n++;
   }
-
-  console.log(newArr);
-  return newArr.join(" ");
+  console.log(newArr2);
+  return newArr2;
 }
 
-titleCase("I'm a little tea pot");
+frankenSplice([1, 2, 3], [4, 5, 6], 1);

@@ -1,24 +1,13 @@
-// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+// Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
 
-// For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
-
-// The arguments ["hello", "hey"] should return false because the string hello does not contain a y.
-
-// Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.
-
-
-// You can also use indexOf()
-
-function mutation(arr) {
-  let str1 = arr[0].toLowerCase();
-  let str2 = arr[1].toLowerCase();
-
-  for (let i = 0; i < str2.length; i++) {
-    if (!str1.includes(str2[i])) {
-      return false;
-    }
+function chunkArrayInGroups(arr, size) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i += size) {
+    newArr.push(arr.slice(i, i + size));
   }
-  return true;
+  
+  console.log(newArr)
+  return newArr;
 }
 
-mutation(["hello", "hey"]);
+chunkArrayInGroups(["a", "b", "c", "d"], 2);

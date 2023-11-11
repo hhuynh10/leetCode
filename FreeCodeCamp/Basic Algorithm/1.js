@@ -8,14 +8,3 @@ function convertCtoF(celsius) {
 }
 
 convertCtoF(30);
-
-let obj = {
-  a: 12,
-  b: 14,
-  c: 43,
-};
-let values = Object.values(obj);
-console.log(values);
-let max = Math.max(...values);
-
-console.log(max);

@@ -1,20 +1,17 @@
-// You are given two arrays and an index.
+// Remove all falsy values from an array. Return a new array; do not mutate the original array.
 
-// Copy each element of the first array into the second array, in order.
+// Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
 
-// Begin inserting elements at index n of the second array.
+// Hint: Try converting each value to a Boolean.
 
-// Return the resulting array. The input arrays should remain the same after the function runs.
-
-function frankenSplice(arr1, arr2, n) {
-  let newArr2 = arr2.slice();
-
-  for (let i = 0; i < arr1.length; i++) {
-    newArr2.splice(n, 0, arr1[i]);
-    n++;
+function bouncer(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      newArr.push(arr[i]);
+    }
   }
-  console.log(newArr2);
-  return newArr2;
+  return newArr;
 }
 
-frankenSplice([1, 2, 3], [4, 5, 6], 1);
+bouncer([7, "ate", "", false, 9]);
