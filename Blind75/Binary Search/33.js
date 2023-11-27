@@ -29,11 +29,3 @@ function search(nums, target) {
 
 console.log(search([4,5,6,7,0,1,2], 0))
 console.log(search([4,5,6,7,0,1,2], 3))
-
-
-
-let arr = [1, 2, 3, 4, 5, 6]
-
-const sl = arr.slice(0, 2)
-const spl = arr.splice(0, 1, 4 )
-console.log(spl + " " + sl)
