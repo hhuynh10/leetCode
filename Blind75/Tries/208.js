@@ -56,3 +56,6 @@ Trie.prototype.startsWith = function (prefix) {
   }
   return true;
 };
+
+let example = new Trie()
+example.insert("apple")
