@@ -23,4 +23,4 @@ function combinationSum(candidates, target) {
 }
 
 console.log(combinationSum([2, 3, 6, 7], 7));
-console.log(combinationSum([2, 3, 5], 8));
+console.log(combinationSum([2, 3, 5], 8))
