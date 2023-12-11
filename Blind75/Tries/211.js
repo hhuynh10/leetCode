@@ -39,7 +39,6 @@ WordDictionary.prototype.search = function (word) {
       let char = word[i];
       if (char === ".") {
         for (let child of Object.values(curr.children)) {
-          console.log(child);
           if (dfs(i + 1, child)) {
             return true;
           }
