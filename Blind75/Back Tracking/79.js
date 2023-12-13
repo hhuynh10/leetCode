@@ -5,7 +5,7 @@ function exist(board, word) {
   let path = new Set();
 
   function dfs(r, c, i) {
-    if (i === word.length) {
+    if (i === word.length - 1) {
       return true;
     }
 
@@ -44,7 +44,7 @@ console.log(
   exist(
     [
       ["A", "B", "C", "E"],
-      ["S", "F", "C", "S"],
+      ["S", "F", "A", "S"],
       ["A", "D", "E", "E"],
     ],
     "ABCCED"
