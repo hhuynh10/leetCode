@@ -1,0 +1,103 @@
+:root {
+  --dark-blue: #0a0a23;
+  --purple: #6037a1;
+  --green: #0a3805;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--dark-blue);
+}
+
+.container {
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: white;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.form-div {
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  min-height: 120px;
+  color: black;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  box-shadow: 0 5px 0 0 blue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+span {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  height: 2.2rem;
+}
+
+#text-input {
+  flex-basis: 75%;
+  height: 100%;
+  border: none;
+  border-bottom: 2px solid var(--purple);
+  font-size: inherit;
+  text-align: center;
+}
+
+#check-btn {
+  flex-basis: 25%;
+  background-color: var(--purple);
+  color: white;
+  border-radius: 15px;
+  height: 100%;
+}
+
+.def-div {
+  width: 100%;
+  background-color: var(--green);
+  border-radius: 20px;
+  height: 150px;
+}
+
+.def-div p {
+  margin: 25px 35px;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.hide {
+  display: none;
+}
+
+.true-style {
+  font-size: 1.5rem;
+  color: green;
+  text-align: center;
+}
+
+.false-style {
+  font-size: 1.5rem;
+  color: red;
+  text-align: center;
+}
