@@ -1,25 +1,28 @@
-function checker(str) {
-  function isValid(char) {
-    return char.match(/[^a-z0-9]/gi);
+const decimalToBinary = (input) => {
+  const inputs = [];
+  const quotients = [];
+  const remainders = [];
+
+  if (input === 0) {
+    result = "0";
+    return;
   }
 
-  let left = 0;
-  let right = str.length - 1;
+  while (input > 0) {
+    const quotient = Math.floor(input / 2);
+    const remainder = input % 2;
 
-  while (left < right) {
-    while (left < right && isValid(str[left])) {
-      left++;
-    }
-    while (left < right && isValid(str[right])) {
-      right--;
-    }
-    if (str[left].toLowerCase() === str[right].toLowerCase()) {
-      return true;
-    }
-    left++;
-    right--;
+    inputs.push(input);
+    quotients.push(quotient);
+    remainders.push(remainder);
+    input = quotient;
   }
-  return false;
-}
 
-console.log(checker("My age is 0, 0 si ega ym"));
+  console.log("Inputs: ", inputs);
+  console.log("Quotients: ", quotients);
+  console.log("Remainders: ", remainders);
+
+  return (result = remainders.reverse().join(""));
+};
+
+console.log(decimalToBinary(8));
