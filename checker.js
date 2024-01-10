@@ -26,3 +26,14 @@ const decimalToBinary = (input) => {
 };
 
 console.log(decimalToBinary(8));
+
+const decimalToBinary1 = (input) => {
+  if (input === 0 || input === 1) {
+    return String(input);
+  } else {
+    return decimalToBinary1(Math.floor(input / 2)) + (input % 2);
+  }
+};
+
+console.log(decimalToBinary1(8))
+
