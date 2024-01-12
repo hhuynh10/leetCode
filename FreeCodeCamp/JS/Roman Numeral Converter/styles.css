@@ -1,0 +1,78 @@
+:root {
+    --dark-blue: #0a0a23;
+    --font-root: Helvetica, Arial, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--dark-blue);
+    font-family: var(--font-root);
+    color: white;
+}
+
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.main-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    background-color: rgb(97, 95, 128);
+    border: 3px solid white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+#number, #convert-btn{
+    width: 90%;
+    height: 3rem;
+}
+
+#number{
+    border: 0;
+    background-color: var(--dark-blue);
+    border: 1px solid white;
+    color: white;
+    font-size: 2.5rem;
+    margin: 5px;
+    text-align: center;
+}
+
+#convert-btn{
+    background-image: linear-gradient(yellow, orange);
+    font-size: 1.5rem;
+    border: 2px solid orange;
+}
+
+.hide{
+    width: 100%;
+    background-color: rgb(97, 95, 128);
+    border: 3px solid white;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    display: none;
+}
+
