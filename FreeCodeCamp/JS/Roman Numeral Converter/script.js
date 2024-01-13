@@ -46,6 +46,8 @@ const converter = () => {
     output.classList.add("safe");
     output.innerHTML = result;
   }
+
+  // input.value = ""
 };
 
 button.addEventListener("click", converter);
