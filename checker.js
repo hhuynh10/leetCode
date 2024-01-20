@@ -25,7 +25,7 @@ const decimalToBinary = (input) => {
   return (result = remainders.reverse().join(""));
 };
 
-console.log(decimalToBinary(8));
+console.log(decimalToBinary(165));
 
 const decimalToBinary1 = (input) => {
   if (input === 0 || input === 1) {
