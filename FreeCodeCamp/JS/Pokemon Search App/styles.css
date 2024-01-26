@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+    --dark-blue: #0a0a23;
+    --purple: #6037a1;
+    --green: #0a3805;
+    --font-root: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--dark-blue);
+    color: white;
+    font-family: var(--font-root);
+  }
+
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+main h1{
+    font-size: 2.5rem;
+}
+
+.container{
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 2rem;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0 0 grey;
+}
