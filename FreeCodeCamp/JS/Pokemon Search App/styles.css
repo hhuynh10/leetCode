@@ -29,7 +29,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  height: 800px;
+  min-height: 800px;
 }
 
 main h1 {
@@ -43,15 +43,22 @@ main h1 {
   color: black;
   border-radius: 20px;
   box-shadow: 10px 10px 0 0 grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .output {
     min-height: 400px;
     background-color: rgb(233, 231, 231);
+    width: 100%;
 }
 
 .table {
  display: grid;
+ width: 100%;
  grid-template-columns: 75% 25%;
  color: white;
  justify-content: center;
@@ -62,5 +69,43 @@ main h1 {
 .table > div {
     background-color: #6037a1;
     text-align: center;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.75rem 0 0.75rem 0;
+    height: 2.5rem
+}
+
+.hide{
+    display: none;
+}
+
+.search {
+    width: 100%;
+}
+
+.input  {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input > #search-input {
+    height: 2.5rem;
+    text-align: center;
+    width: 68%;
+    font-size: 1.5rem;
+    padding: 5px;
+    outline: none;
+}
+
+.input > #search-input:hover, .input > #search-input:focus{
+    border: 3px solid #6037a1;
+}
+
+.input > #search-button{
+    height: 2.5rem;
+    background-color: #6037a1;
+    border-radius: 25px;
+    color: white;
+    width: 30%;
 }
