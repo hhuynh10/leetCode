@@ -51,61 +51,156 @@ main h1 {
 }
 
 .output {
-    min-height: 400px;
-    background-color: rgb(233, 231, 231);
-    width: 100%;
+  min-height: 400px;
+  background-color: rgb(233, 231, 231);
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .table {
- display: grid;
- width: 100%;
- grid-template-columns: 75% 25%;
- color: white;
- justify-content: center;
- align-items: center;
- gap: 3px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 75% 25%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }
 
 .table > div {
-    background-color: #6037a1;
-    text-align: center;
-    padding: 0.75rem 0 0.75rem 0;
-    height: 2.5rem
+  background-color: #6037a1;
+  text-align: center;
+  padding: 0.75rem 0 0.75rem 0;
+  height: 2.5rem;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 
 .search {
-    width: 100%;
+  width: 100%;
 }
 
-.input  {
-    margin-top: 1rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.input {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .input > #search-input {
-    height: 2.5rem;
-    text-align: center;
-    width: 68%;
-    font-size: 1.5rem;
-    padding: 5px;
-    outline: none;
+  height: 2.5rem;
+  text-align: center;
+  width: 68%;
+  font-size: 1.2rem;
+  padding: 5px;
+  outline: none;
 }
 
-.input > #search-input:hover, .input > #search-input:focus{
-    border: 3px solid #6037a1;
+.input > #search-input:hover,
+.input > #search-input:focus {
+  border: 3px solid #6037a1;
 }
 
-.input > #search-button{
-    height: 2.5rem;
-    background-color: #6037a1;
-    border-radius: 25px;
-    color: white;
-    width: 30%;
+.input > #search-button {
+  height: 2.5rem;
+  background-color: #6037a1;
+  border-radius: 25px;
+  color: white;
+  width: 30%;
+}
+
+#img {
+  height: 350px;
+  width: 350px;
+}
+
+.btn {
+  margin-right: 5px;
+  height: 2rem;
+  outline: none;
+  width: 4rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: #6037a1 1px solid;
+  color: white;
+}
+
+.search > label{
+  font-size: 1.25rem;
+}
+
+.bug {
+  background-color: #a6b91a;
+}
+
+.dark {
+  background-color: #705746;
+}
+
+.dragon {
+  background-color: #6f35fc;
+}
+
+.electric {
+  background-color: #f7d02c;
+}
+
+.fairy {
+  background-color: #d685ad;
+}
+
+.fighting {
+  background-color: #c22e28;
+}
+
+.fire {
+  background-color: #ee8130;
+}
+
+.flying {
+  background-color: #a98ff3;
+}
+
+.grass {
+  background-color: #7ac74c;
+}
+
+.ghost {
+  background-color: #735797;
+}
+
+.ground {
+  background-color: #e2bf65;
+}
+
+.ice {
+  background-color: #96d9d6;
+}
+
+.normal {
+  background-color: #a8a77a;
+}
+
+.poison {
+  background-color: #a33ea1;
+}
+
+.psychic {
+  background-color: #f95587;
+}
+
+.water {
+  background-color: #6390f0;
+}
+
+.rock {
+  background-color: #b6a136;
+}
+
+.steel {
+  background-color: #b7b7ce;
 }

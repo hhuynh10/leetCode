@@ -13,15 +13,15 @@
         <div class="search">
           <label for="search-input">Search for Pokémon Name or ID:</label>
           <div class="input">
-            <input type="text" id="search-input" />
+            <input type="text" id="search-input" required/>
             <button id="search-button">Search</button>
           </div>
         </div>
         <div class="output">
-          <div class="hide">
-            <h2><span id="pokemon-name"></span> <span id="pokemon-id"></span></h2>
+          <div id="image" class="hide">
+            <h2><span id="pokemon-name"></span> #<span id="pokemon-id"></span></h2>
             <p>Weight: <span id="weight"></span> Height: <span id="height"></span></p>
-            <img src="" alt="">
+            <img id="img">
             <div id="types"></div>
           </div>
         </div>
