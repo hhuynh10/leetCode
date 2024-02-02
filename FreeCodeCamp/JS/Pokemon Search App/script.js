@@ -50,12 +50,12 @@ const displayPokemon = (pokeStats) => {
   speedDisplay.textContent = pokeStats.stats[5].base_stat;
   imgDisplay.src = pokeStats.sprites.front_default;
 
-  input.value = "";
+  input.value = ""
 };
 
 button.addEventListener("click", fetchData);
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    fetchData();
+    fetchData()
   }
-});
+})
