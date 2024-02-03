@@ -35,7 +35,7 @@ const displayPokemon = (pokeStats) => {
   image.classList.remove("hide");
   nameDisplay.textContent = pokeStats.name;
   idDisplay.textContent = pokeStats.id;
-  nameDisplay.style.textTransform = "capitalize"
+  nameDisplay.style.textTransform = "capitalize";
   weightDisplay.textContent = pokeStats.weight;
   heightDisplay.textContent = pokeStats.height;
   typesDisplay.innerHTML = "";
@@ -50,12 +50,12 @@ const displayPokemon = (pokeStats) => {
   speedDisplay.textContent = pokeStats.stats[5].base_stat;
   imgDisplay.src = pokeStats.sprites.front_default;
 
-  input.value = ""
+  input.value = "";
 };
 
 button.addEventListener("click", fetchData);
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    fetchData()
+    fetchData();
   }
-})
+});
