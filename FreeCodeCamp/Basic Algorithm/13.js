@@ -14,4 +14,4 @@ function bouncer(arr) {
   return newArr;
 }
 
-bouncer([7, "ate", "", false, 9]);
+console.log(bouncer([7, "ate", "", false, 9]));
