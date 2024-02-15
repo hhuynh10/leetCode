@@ -10,7 +10,7 @@ export default function App() {
         phoneNumber={user.phoneNumber}
         address={user.address}
       >
-        Person Card:
+        Person Card: tdghtreg
       </PersonCard>
     </div>
   );
