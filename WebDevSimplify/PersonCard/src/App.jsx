@@ -6,7 +6,6 @@ import Todo from "./Todo";
 
 export default function App() {
   const [isShown, SetIsShown] = useState(true);
-  const [todos, setTodos] = useState([]);
 
   return (
     <div>
@@ -19,7 +18,7 @@ export default function App() {
       <hr />
       <User />
       <hr />
-      <Todo todos={todos} setTodos={setTodos} />
+      <Todo/>
     </div>
   );
 }

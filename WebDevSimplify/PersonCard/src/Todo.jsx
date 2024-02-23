@@ -1,25 +1,39 @@
 import React, { useEffect, useState } from "react";
 
-const Todo = ({ todos, setTodos }) => {
+const Todo = () => {
   const [todo, setTodo] = useState("");
+  const [todos, setTodos] = useState([]);
 
-  const addTodo = (todo) => {
-    if (todo == '') return
-    setTodos((currArr) => {
-      return [...currArr, todo];
+  const addTodo = () => {
+    if (todo == "") return;
+    setTodos((currTodos) => {
+      return [
+        ...currTodos,
+        { name: todo, completed: false, id: crypto.randomUUID() },
+      ];
     });
     setTodo("");
   };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      addTodo(todo);
+      addTodo();
     }
   };
 
-  const deleteTodo = (index) => {
-    setTodos((currArr) => {
-      return currArr.filter((currInd) => currInd !== index);
+  const deleteTodo = (id) => {
+    setTodos((currTodos) => {
+      return currTodos.filter((todo) => todo.id !== id);
+    });
+  };
+
+  const toggleTodo = (todoId, completed) => {
+    setTodos((currTodos) => {
+      return currTodos.map((todo) => {
+        if (todo.id === todoId) return { ...todo, completed };
+
+        return todo;
+      });
     });
   };
 
@@ -31,11 +45,20 @@ const Todo = ({ todos, setTodos }) => {
         onChange={(e) => setTodo(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <button onClick={() => addTodo(todo)}>Add Todo</button>
-      {todos.map((todo, index) => (
-        <div key={index}>
-          <span>{todo}</span>
-          <button onClick={() => deleteTodo(todo)}>Delete</button>
+      <button onClick={addTodo}>Add Todo</button>
+      {todos.map((todo) => (
+        <div key={todo.id}>
+          <input
+            checked={todo.completed}
+            type="checkbox"
+            onChange={(e) => toggleTodo(todo.id, e.target.checked)}
+          />
+          <span
+            style={todo.completed ? { textDecoration: "line-through" } : null}
+          >
+            {todo.name}
+          </span>
+          <button onClick={() => deleteTodo(todo.id)}>Delete</button>
         </div>
       ))}
     </div>
