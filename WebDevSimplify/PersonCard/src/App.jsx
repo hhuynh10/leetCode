@@ -1,16 +1,26 @@
 import { useState } from "react";
-import Test from "./UseEffect";
-import Width from "./Width";
-import User from "./User";
-import Todo from "./Todo";
+import Test from "./Components/UseEffect";
+import Width from "./Components/Width";
+import User from "./Components/User";
+import Todo from "./Components/Todo";
+import { useToggle } from "./Customs/useToggle";
+import UseFetch from "./Components/UseFetch";
+import UseArray from "./Components/UseArray";
 
 export default function App() {
   const [isShown, SetIsShown] = useState(true);
+  const [isDarkMode, toggleDarkMode] = useToggle(false);
 
   return (
-    <div>
+    <div
+      style={{
+        background: isDarkMode ? "#333" : "white",
+        color : isDarkMode ? "white" : "#333"
+      }}
+    >
       {/* use effect */}
       <button onClick={() => SetIsShown((s) => !s)}>Show/Hide</button>
+      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
       <hr />
       {isShown ? <Test /> : null}
       <hr />
@@ -18,7 +28,11 @@ export default function App() {
       <hr />
       <User />
       <hr />
-      <Todo/>
+      <Todo />
+      <hr />
+      <UseFetch />
+      <hr />
+      <UseArray />
     </div>
   );
 }
