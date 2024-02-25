@@ -23,7 +23,11 @@ export function useArray(INITIAL_ARRAY) {
     });
   }
 
-  function filter() {}
+  function filter() {
+    setArray((currArray) => {
+      return currArray.filter((el) => el < 3);
+    });
+  }
 
   function remove(index) {
     setArray((currArray) => {
