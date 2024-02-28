@@ -32,40 +32,37 @@ public static void main(String args[ ])
               final int HARD = 20; //Point for hard questions
               
               int userPoints = 50; //User starting points
-              int userAttempt = 3; //User attempts for each question
+              int userAttempts = 3; //User attempts for each question
               
-              String welcome = 
-              "╔════════════════════════════════════╗\n" +
-              "║   Welcome to Java Beans' Project   ║\n" +
-              "╚════════════════════════════════════╝"; //Welcoming string
+              String welcome = "Welcome to JavaBeans' Project"; //Welcoming string
           
               String gameRules = 
-              "Starting Points: Players begin their gaming journey with an initial pool of 50 points.\n" +
-              "Difficulty Levels: Players have the flexibility to choose questions from three distinct difficulty levels: Easy, Medium, and Hard. Each level corresponds to a specific point value: 5 points for Easy, 10 points for Medium, and 15 points for Hard questions.\n" +
-              "Attempts: Players are granted three attempts to respond to each question.\n" +
-              "Point System:\n" +
-              "A correct answer results in point accumulation based on the difficulty level of the question.\n" +
-              "Easy questions earn 5 points, Medium questions earn 10 points, and Hard questions earn 15 points.\n" +
-              "An incorrect answer incurs a deduction in points.\n" +
-              "Game Restart:\n" +
-              "The game restarts when the player accumulates 150 points.\n" +
-              "The game also restarts if the player reaches zero points due to a loss.\n"; //Game rules
+              "Starting Points: Players begin their gaming journey with an initial pool of 50 points.\n"
+              + "Difficulty Levels: Players have the flexibility to choose questions from three distinct difficulty levels: Easy, Medium, and Hard. Each level corresponds to a specific point value: 5 points for Easy, 10 points for Medium, and 15 points for Hard questions.\n"
+              + "Attempts: Players are granted three attempts to respond to each question.\n" 
+              + "Point System:\n" 
+              + "A correct answer results in point accumulation based on the difficulty level of the question.\n" 
+              + "Easy questions earn 5 points, Medium questions earn 10 points, and Hard questions earn 15 points.\n" 
+              + "An incorrect answer incurs a deduction in points.\n" 
+              + "Game Restart:\n" 
+              + "The game restarts when the player accumulates 150 points.\n" 
+              + "The game also restarts if the player reaches zero points due to a loss.\n"; //Game rules
 
-              String congrats1 = "Congratulations, your answer is correct!";
-              String congrats2 = "Great job! Your answer is correct!";
-              String congrats3 = "Congratulations! Your response is accurate!";
+              String congrats1 = "Congratulations, your answer is correct!"; //congratulation quote
+              String congrats2 = "Great job! Your answer is correct!"; //congratulation quote
+              String congrats3 = "Congratulations! Your response is accurate!"; //congratulation quote
 
-              String motivation1 = "Keep trying, you're getting closer!";
-              String motivation2 = "You're almost there! Give it another try!";
-              String motivation3 = "Keep trying, you're on the right track!";
+              String motivation1 = "Keep trying, you're getting closer!"; //motivation quote
+              String motivation2 = "You're almost there! Give it another try!"; //motivation quote
+              String motivation3 = "Keep trying, you're on the right track!"; //motivation quote
 
               String userAns; //User answer
 
               // Identifiers for easy questions
               //Question 1
-              double length;
-              double width;
-              double area;
+              double length; //length
+              double width; //width
+              double area; //area
 
               //get  input as required by program specifications
               System.out.println(welcome);
@@ -81,8 +78,8 @@ public static void main(String args[ ])
               //process data as required by program specificationsn
               //Easy questions
               //Question 1
-              length = Double.parseDouble(fm.format(Math.random() * 10 + 1));
-              width = Double.parseDouble(fm.format(Math.random() * 10 + 1));
+              length = Double.parseDouble(fm.format(Math.random() * 10));
+              width = Double.parseDouble(fm.format(Math.random() * 10));
               area = Double.parseDouble(fm.format(length * width));
               double answer;
 
@@ -95,29 +92,26 @@ public static void main(String args[ ])
                 System.out.print("Calculate the area of a rectangle given its length and width\n" + "Length: " + length + ", Width: " + width + "\nYour answer: ");
                 userAns = input.nextLine();
                 answer = Double.parseDouble(userAns);
-                if (answer == area){
+                if (answer == area) {
                   System.out.println(congrats1);
                   userPoints += EASY;
                   System.out.println("Your current points: " + userPoints);
                 } else {
-                  if (userAttempt > 0 && answer != area){
-                    System.out.println(motivation1);
-                    userAns = input.nextLine();
-                    userAttempt--;
-                    if (userAttempt > 0 && answer != area){
-                      System.out.println(motivation2);
+                  userAttempts--;
+                  if (answer == area) {
+                    System.out.println(congrats1);
+                    userPoints += EASY;
+                    System.out.println("Your current points: " + userPoints);
+                  }
+                  else if (userAttempts > 0) {
+                      System.out.println(motivation1);
+                      System.out.println("Your Attempt: " + userAttempts);
+                      System.out.print("Your answer: ");
                       userAns = input.nextLine();
-                      userAttempt--;
-                    } 
-                    if (userAttempt > 0 && answer != area) {
-                      System.out.println("Your answer is inccorect. The answer is: " + area);
+                  } else {
+                      System.out.println("Your answer is incorrect. The answer is: " + area);
                       userPoints -= EASY;
                       System.out.println("Your current points: " + userPoints);
-                    }
-                  } else {
-                    System.out.println("Your answer is inccorect. The answer is: " + area);
-                    userPoints -= EASY;
-                    System.out.println("Your current points: " + userPoints);
                   }
                 }
               }
