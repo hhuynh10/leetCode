@@ -211,7 +211,7 @@ function attack() {
     fighting === 2 ? winGame() : defeatMonster();
   }
   if (Math.random() <= 0.1 && inventory.length !== 1) {
-    text.innerText += " Your " + inventory.pop() + " breaks.";
+    text.innerText += " Your " + inventory.pop() + " breaks."
     currentWeapon--;
   }
 }
