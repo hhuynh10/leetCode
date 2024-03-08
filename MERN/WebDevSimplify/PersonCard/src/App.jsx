@@ -6,6 +6,8 @@ import Todo from "./Components/Todo";
 import { useToggle } from "./Customs/useToggle";
 import UseFetch from "./Components/UseFetch";
 import UseArray from "./Components/UseArray";
+import UserLocalStorage from "./Components/UserLocalStorage";
+import FormValidation from "./Components/FormValidation";
 
 export default function App() {
   const [isShown, SetIsShown] = useState(true);
@@ -33,6 +35,10 @@ export default function App() {
       <UseFetch />
       <hr />
       <UseArray />
+      <hr />
+      <UserLocalStorage />
+      <hr />
+      <FormValidation />
     </div>
   );
 }

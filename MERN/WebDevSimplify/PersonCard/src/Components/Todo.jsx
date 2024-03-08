@@ -31,7 +31,6 @@ const Todo = () => {
     setTodos((currTodos) => {
       return currTodos.map((todo) => {
         if (todo.id === todoId) return { ...todo, completed };
-
         return todo;
       });
     });
