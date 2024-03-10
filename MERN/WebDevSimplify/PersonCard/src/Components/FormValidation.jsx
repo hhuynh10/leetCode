@@ -22,7 +22,7 @@ const FormValidation = () => {
     const passwordResults = checkPassword(password);
 
     if (emailResults.length === 0 && passwordResults.length === 0) {
-      alert("Success")
+      alert("Success");
     }
   }
 

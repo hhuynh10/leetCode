@@ -8,6 +8,7 @@ import UseFetch from "./Components/UseFetch";
 import UseArray from "./Components/UseArray";
 import UserLocalStorage from "./Components/UserLocalStorage";
 import FormValidation from "./Components/FormValidation";
+import ReactHookForm from "./Components/ReactHookForm";
 
 export default function App() {
   const [isShown, SetIsShown] = useState(true);
@@ -39,6 +40,8 @@ export default function App() {
       <UserLocalStorage />
       <hr />
       <FormValidation />
+      <hr />
+      <ReactHookForm />
     </div>
   );
 }
