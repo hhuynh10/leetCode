@@ -9,6 +9,8 @@ import UseArray from "./Components/UseArray";
 import UserLocalStorage from "./Components/UserLocalStorage";
 import FormValidation from "./Components/FormValidation";
 import ReactHookForm from "./Components/ReactHookForm";
+import UseReducer from "./Components/UseReducer";
+import TodoAdvance from "./Components/TodoAdvance";
 
 export default function App() {
   const [isShown, SetIsShown] = useState(true);
@@ -42,6 +44,10 @@ export default function App() {
       <FormValidation />
       <hr />
       <ReactHookForm />
+      <hr />
+      <UseReducer />
+      <hr />
+      <TodoAdvance />
     </div>
   );
 }

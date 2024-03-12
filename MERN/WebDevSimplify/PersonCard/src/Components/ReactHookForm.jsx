@@ -28,7 +28,7 @@ const ReactHookForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="form">
+    <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="email">Email</label>
       <input
         type="email"
