@@ -29,10 +29,10 @@ const TodoAdvance = () => {
     );
   };
 
-  const updateTodo = (id, newName) => {
+  const updateTodo = (id, newTodo) => {
     setTodoList((currentList) =>
       currentList.map((todo) =>
-        todo.id === id ? { ...todo, name: newName } : todo
+        todo.id === id ? { ...todo, name: newTodo } : todo
       )
     );
   };
