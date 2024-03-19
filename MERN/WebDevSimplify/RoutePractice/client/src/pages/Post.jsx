@@ -1,17 +1,48 @@
-import React from "react";
-import axios from "axios";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { getComments } from "../api/comments";
+import { getPost } from "../api/posts";
+import { getUser } from "../api/users";
+import axios from 'axios'
 
-const Post = () => {
-  const post = useLoaderData();
-  return <div>{post.title}</div>;
-};
+function Post() {
+  const { comments, post, user } = useLoaderData();
 
-const loader = ({ request: { signal } }) => {
-  return axios
-    .get(`http://localhost:3000/${postId}`, { signal })
-    .then((res) => res.data);
-};
+  // const post = useLoaderData()
+
+  return (
+    <>
+      <h1 className="page-title">{post.title}</h1>
+      <span className="page-subtitle">
+        By: <Link to={`/users/${user.id}`}>{user.name}</Link>
+      </span>
+      <div>{post.body}</div>
+
+      <h3 className="mt-4 mb-2">Comments</h3>
+      <div className="card-stack">
+        {comments.map((comment) => (
+          <div key={comment.id} className="card">
+            <div className="card-body">
+              <div className="text-sm mb-1">{comment.email}</div>
+              {comment.body}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+async function loader({ request: { signal }, params: { postId } }) {
+  const comments = getComments(postId, { signal })
+  const post = await getPost(postId, { signal })
+  const user = getUser(post.userId, { signal })
+
+  return { comments: await comments, post, user: await user }
+
+  // return axios
+  //   .get(`http://localhost:3000/posts/${postId}`, { signal })
+  //   .then((res) => res.data);
+}
 
 export const postRoute = {
   loader,

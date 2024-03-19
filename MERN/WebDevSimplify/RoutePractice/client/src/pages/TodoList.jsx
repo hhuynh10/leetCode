@@ -1,36 +1,27 @@
-import React from "react";
-import axios from "axios";
-import { useLoaderData } from "react-router-dom";
-import { getTodos } from "../api/todos";
+import { useLoaderData } from "react-router-dom"
+import { getTodos } from "../api/todos"
+import { TodoItem } from "../components/TodoItem"
 
-const TodoList = () => {
-  const todos = useLoaderData();
+function TodoList() {
+  const todos = useLoaderData()
+
   return (
     <>
       <h1 className="page-title">Todos</h1>
       <ul>
-        {todos.map((todo) => (
-          <li
-            key={todo.id}
-            className={`${todo.completed ? "strike-through" : null}`}
-          >
-            {todo.title}
-          </li>
+        {todos.map(todo => (
+          <TodoItem key={todo.id} {...todo} />
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
-const loader = ({ request: { signal } }) => {
-  return axios
-    .get("http://localhost:3000/todos", { signal })
-    .then((res) => res.data);
-
-  // return getTodos({ signal });
-};
+function loader({ request: { signal } }) {
+  return getTodos({ signal })
+}
 
 export const todoListRoute = {
   loader,
   element: <TodoList />,
-};
+}
